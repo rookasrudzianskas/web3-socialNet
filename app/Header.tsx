@@ -3,8 +3,22 @@ import Image from "next/image";
 import Link from "next/link";
 
 const Header = ({}) => {
+    const session = true;
+
+    if(session) return (
+        <header className="sticky top-0 z-50 bg-white flex justify-center items-center p-10 shadow-sm">
+            <div className="flex space-x-2">
+                <Image src={session?.user?.image || 'https://links.papareact.com/jne'} height={10} width={50} alt={'image'} className="rounded-full mx-2 object-contain" />
+                <div>
+                    <p>Logged in as:</p>
+                    <p>Rokas Rudzianskas</p>
+                </div>
+            </div>
+        </header>
+    )
+
     return (
-        <header className="sticky top-0 z-50 bg-white">
+        <header className="sticky top-0 z-50 bg-white flex justify-center items-center p-10 shadow-sm">
             <div className="flex-col flex items-center space-y-5">
                 <div className={"flex space-x-2 items-center"}>
                     <Image

@@ -11,4 +11,5 @@ export const serverPusher = new Pusher({
 
 export const clientPusher = new ClientPusher("3cfabf3f0f00a0d701fb", {
     cluster: 'ap2',
+    forceTLS: true
 });

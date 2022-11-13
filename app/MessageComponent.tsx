@@ -3,6 +3,7 @@ import {Message} from "../typings";
 import Image from "next/image";
 import {unstable_getServerSession} from "next-auth";
 import {useSession} from "next-auth/react";
+import TimeAgo from "react-timeago";
 
 type Props = {
     message: Message,
@@ -31,7 +32,9 @@ const MessageComponent = ({message}: Props) => {
                         className={`px-3 py-2 rounded-lg w-fit text-white ${isUser ? 'bg-blue-400 ml-auto order-2' : 'bg-red-400'}`}>
                         <p>{message.message}</p>
                     </div>
-                    <p className={`text-[0.65rem] italic px-2 text-gray-300 ${isUser && 'text-right'}`}>{new Date(message.created_at).toLocaleString()}</p>
+                    <p className={`text-[0.65rem] italic px-2 text-gray-300 ${isUser && 'text-right'}`}>
+                        <TimeAgo date={new Date(message.created_at)} />
+                    </p>
                 </div>
             </div>
         </div>

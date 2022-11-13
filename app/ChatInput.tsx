@@ -10,8 +10,6 @@ const ChatInput = ({}) => {
     const [input, setInput] = useState('');
     const {data: messages, error, mutate} = useSWR("/api/getMessages", fetcher);
 
-    console.log("DAta", messages);
-
     const addMessage = async (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         if (!input) return;

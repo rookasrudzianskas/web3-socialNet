@@ -1,10 +1,13 @@
 import React from 'react';
+import MessageList from "./MessageList";
+import ChatInput from "./ChatInput";
 
 const HomePage = ({}) => {
     return (
-        <div>
-            <h1>Home Page - ROkas</h1>
-        </div>
+        <main>
+            <MessageList />
+            <ChatInput />
+        </main>
     );
 };
 

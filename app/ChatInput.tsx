@@ -19,7 +19,7 @@ const ChatInput = ({}: Props) => {
 
     const addMessage = async (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        if (!input) return;
+        if (!input || !session) return;
 
         const messageToSend = input;
         setInput('');
@@ -29,9 +29,9 @@ const ChatInput = ({}: Props) => {
             id: id,
             message: messageToSend,
             created_at: Date.now(),
-            username: 's',
-            profilePic: 'https://yt3.ggpht.com/IQ4OqurVrPmACaf3h5fgTcRInn6QoHz0xN4O5qzhuhY7UKgpDg2A4mGyhWW5vcaGSiVbf_FLdQ=s900-c-k-c0x00ffffff-no-rj',
-            email: session?.user?.email,
+            username: session?.user?.name!,
+            profilePic: session?.user?.image!,
+            email: session?.user?.email || 's'
         }
 
         const uploadMessageToUpstash = async () => {

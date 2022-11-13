@@ -1,6 +1,7 @@
 import React from 'react';
 import Image from "next/image";
 import Link from "next/link";
+import LogoutButton from "./LogoutButton";
 
 const Header = ({}) => {
     const session = true;
@@ -10,10 +11,11 @@ const Header = ({}) => {
             <div className="flex space-x-2">
                 <Image src={session?.user?.image || 'https://links.papareact.com/jne'} height={10} width={50} alt={'image'} className="rounded-full mx-2 object-contain" />
                 <div>
-                    <p>Logged in as:</p>
-                    <p>Rokas Rudzianskas</p>
+                    <p className="text-blue-400">Logged in as:</p>
+                    <p className="font-bold text-lg">Rokas Rudzianskas</p>
                 </div>
             </div>
+            <LogoutButton />
         </header>
     )
 

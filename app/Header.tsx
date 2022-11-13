@@ -7,7 +7,7 @@ const Header = ({}) => {
     const session = true;
 
     if(session) return (
-        <header className="sticky top-0 z-50 bg-white flex justify-center items-center p-10 shadow-sm">
+        <header className="sticky top-0 z-50 bg-white flex justify-between items-center p-10 shadow-sm">
             <div className="flex space-x-2">
                 <Image src={session?.user?.image || 'https://links.papareact.com/jne'} height={10} width={50} alt={'image'} className="rounded-full mx-2 object-contain" />
                 <div>

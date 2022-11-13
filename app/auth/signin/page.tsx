@@ -8,7 +8,7 @@ const SignInPage = async ({}) => {
 
     return (
         <div>
-            <div>
+            <div className="flex items-center justify-center">
                 <Image
                     className="rounded-full mx-2 object-cover"
                     width={700}

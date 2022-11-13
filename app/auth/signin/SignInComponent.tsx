@@ -12,9 +12,11 @@ const SignInComponent = ({providers}: Props) => {
     return (
         <div>
             {Object.values(providers!).map((provider, index) => (
-                <div key={index}>
-                    <button onClick={() => signIn(provider.id, {
-                        callbackUrl: (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : 'http://localhost:3000') + '/auth/signin',
+                <div className="flex items-center justify-center" key={index}>
+                    <button
+                        className="bg-blue-400 hover:bg-blue-500 text-white px-4 py-2 rounded-lg"
+                        onClick={() => signIn(provider.id, {
+                        callbackUrl: (process.env.VERCEL_URL ? `${process.env.VERCEL_URL}` : 'http://localhost:3000'),
                     })}>
                         Sign in with {provider.name}
                     </button>

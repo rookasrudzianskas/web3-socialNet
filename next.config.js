@@ -5,6 +5,6 @@ module.exports = {
     appDir: true,
   },
   images: {
-    domains: ['images.unsplash.com', 'links.papareact.com'],
+    domains: ['images.unsplash.com', 'links.papareact.com', 'yt3.ggpht.com'],
   }
 }

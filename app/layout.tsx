@@ -1,6 +1,5 @@
 import '../styles/globals.css';
 import React from "react";
-import Header from "./Header";
 import {unstable_getServerSession} from "next-auth";
 import {Providers} from "./providers";
 
@@ -17,7 +16,7 @@ export default async function RootLayout({
     return (
         <html lang="en">
         <body>
-        <Header/>
+        <header/>
             {children}
         </body>
         </html>
